@@ -1,0 +1,135 @@
+{% load static %}
+
+<body>
+  <header>
+    <h2 class="name">단어 수 세기</h2>
+  </header>
+  <h3>아래 노트를 클릭하고 문장을 입력하세요!</h3>
+  <form action={% url 'result' %} method='GET'>
+    <img src="{% static 'board.png ' %}" alt="" class="board-img">
+      <div class="text-box">
+        <textarea name="text" cols="50" rows="22"></textarea>
+      </div>
+    <br>
+    <button type="submit" class="submit-button">
+      START!
+    </button>
+  </form>
+  <hr>
+  <a href={% url 'about' %} class="about">about</a>
+</body>
+
+<style> 
+  @font-face {
+    font-family: 'KCCMurukmuruk';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-family:'KCCMurukmuruk';
+  }
+
+  .name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 12rem;
+    height: 4rem;
+
+    background-color: #aa6325;
+
+    border-radius: 45px 45px 45px 45px;
+    -webkit-border-radius: 45px 45px 45px 45px;
+    -moz-border-radius: 45px 45px 45px 45px;
+
+
+    color: #fff;
+  }
+
+  .board-img
+  {
+    position: relative;
+    
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .text-box
+  {
+    position: absolute;
+    top: 34%;
+    left: 18%;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  .text-box textarea
+  {
+    position: relative;
+    right: 18%;
+    top: 4.5%;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border: thin solid rgba(255, 255, 255, 0.2);
+    color: #000;
+    line-height: 1.65rem;
+    font-family:'KCCMurukmuruk';
+  }
+
+  .submit-button
+  {
+    position: relative;
+    top: 2rem;
+    width: 7rem;
+    height: 3rem;
+
+    background-color: red;
+    color: #fff;
+
+    border-radius: 45px 45px 45px 45px;
+    -webkit-border-radius: 45px 45px 45px 45px;
+    -moz-border-radius: 45px 45px 45px 45px;
+
+    font-size: 1.3rem;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+
+  .submit-button:hover
+  {
+    width: 7rem;
+    height: 3rem;
+
+    background-color: white;
+    color: red;
+
+    border-radius: 45px 45px 45px 45px;
+    -webkit-border-radius: 45px 45px 45px 45px;
+    -moz-border-radius: 45px 45px 45px 45px;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .about
+  {
+    position: relative;
+    top: 10%;
+
+    margin: 0 0 6% 0;
+
+    font-size: 1.5rem;
+  }
+
+</style>

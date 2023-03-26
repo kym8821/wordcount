@@ -1,0 +1,46 @@
+<body>
+  <header>
+    <h1>결과</h1>
+  </header>
+
+  <div class="total-amount">
+    전체 단어 수는 {{ total }}개 입니다.
+  </div>
+  <div class="result-detail">
+    {% for word,value in words %}
+    <p>'{{word}}' 의 갯수:{{value}}</p>
+    {% endfor %}
+  </div>
+
+  <a href={% url 'main' %}>메인 페이지로</a>
+</body>
+
+<style>
+  @font-face {
+    font-family: 'KCCMurukmuruk';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body{
+    position: relative;
+    top: 5%;
+
+    text-align: center;
+    font-family: 'KCCMurukmuruk';
+  }
+
+  header
+  {
+  }
+
+  .total-amount
+  {
+  }
+
+  .result-detail
+  {
+
+  }
+</style>
